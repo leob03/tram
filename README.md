@@ -58,6 +58,22 @@ python scripts/visualize_tram.py --video "./example_video.mov"
 
 Running the above three scripts on the provided video `./example_video.mov` will create a folder `./results/exapmle_video` and save all results in it. Please see available arguments in the scripts.
 
+## Export to Blender
+After running the demo, you can export the results to Blender for 3D visualization and further editing.
+
+```bash
+# Export SMPL meshes and camera trajectory as a Blender Python script
+python scripts/export_to_blender.py --video "./your_video.mp4"
+```
+
+This will generate a Blender Python script at `./results/your_video/blender_export/tram_blender_scene.py`. To use it:
+1. Open Blender
+2. Go to the Scripting tab
+3. Open the generated script
+4. Click "Run Script" or press Alt+P
+5. Press spacebar in the viewport to play the animation
+
+The script creates an animated scene with SMPL character meshes, camera trajectory with proper focal length and sensor settings, and a ground plane with checkered texture.
 
 ## Evaluation
 You can run inference and evaluation from scratch on EMDB as follow.
